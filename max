@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    
+    
+    public int maxSum(int[] str) {
+        if(str==null||str.length==0){
+            return 0;
+        }
+ 
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+  
+        for (int i = 0; i < str.length; i++) {
+           if(sum <= 0){
+               sum = str[i];
+           }else{
+               sum += str[i];
+           }
+           if(max < sum){
+               max = sum;
+           }
+        }  
+        return max;  
+    }
+    
+    
+}
